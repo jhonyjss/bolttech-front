@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import BTFormLogin from "./components/login/BTFormLogin";
+import BTFormLogin from "./components/auth/BTFormLogin";
 import BTNavbar from "./components/Navbar";
 function App() {
   const [count, setCount] = useState(0);
