@@ -10,7 +10,6 @@ import useAuth from "@/hooks/auth.hook"
 const BTFormLogin = () => {
   const navigate = useNavigate()
   const { login, getUser } = useAuth()
-  console.log(getUser().then(res => console.log(res)))
 
   async function onLogin(e) {
     e.preventDefault()

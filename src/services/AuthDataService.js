@@ -1,5 +1,4 @@
 import http from "../api/http-common";
-import axios from "axios";
 class AuthDataService {
   async register(_data) {
     try {
@@ -12,7 +11,7 @@ class AuthDataService {
   async login(email, password) {
     try {
       const response = await http.post(`/auth/login`, { email, password });
-      axios.defaults.headers.common["Authorization"] = response.data.access_token;
+      http.defaults.headers.common["Authorization"] = "Bearer " + response.data.access_token;
       return response;
     } catch (error) {
       console.error("login", error);
