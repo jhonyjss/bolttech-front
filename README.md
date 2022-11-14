@@ -14,6 +14,10 @@ Este projeto consiste em aplicação fullstack, desenvolvido utilizando tecnolog
 - Criacao de Tarefa para cada projeto
 - Vite Introduced ( superfast building )
 
+## Pendings
+
+- Unit Tests
+
 ## Tech Stack
 
 **Client:** React, Vite, Bootstrap 5, Axios
