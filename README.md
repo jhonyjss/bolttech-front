@@ -20,7 +20,7 @@ Este projeto consiste em aplicação fullstack, desenvolvido utilizando tecnolog
 
 **Server:** Node, Express, NestJS Framework
 
-## Variavel de ambiente
+## Variavel de ambiente ( nao possui )
 
 Para rodar este projeto no BACKEND pode utlizar yarn docker:dev ou para yarn docker:prod, caso aconteca algum erro, utiliza os scripts padroes
 
