@@ -35,7 +35,7 @@ Para ter acesso a documentação dos endpoints desenvolvido você deve acessar o
 Navegue ate o diretorio
 
 ```bash
-  cd api
+  git clone git@github.com:jhonyjss/bolttech-api.git && cd bolttech-api
 ```
 
 Executar com docker compose
