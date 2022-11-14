@@ -15,5 +15,13 @@ class TaskDataservice {
       console.error("create", error);
     }
   }
+
+  async update(id, _data) {
+    try {
+      return await http.patch(`/task/${id}`, _data);
+    } catch (error) {
+      console.error("create", error);
+    }
+  }
 }
 export default new TaskDataservice();

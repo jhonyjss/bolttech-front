@@ -21,10 +21,12 @@ const TaskAdd = ({ projectId, watch }) => {
 
         if (!description) {
             alert("Theres no description of this task, please create one")
+            return
         }
 
         if (!finish_at) {
             alert("Select when finish this todo")
+            return
         }
 
         const response = await TaskDataService.create({
@@ -35,8 +37,6 @@ const TaskAdd = ({ projectId, watch }) => {
             "status": false,
         })
         e.target.reset();
-
-
         watch(response.data)
 
     }
