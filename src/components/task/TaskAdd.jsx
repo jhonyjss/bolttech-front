@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Form, Button } from "react-bootstrap";
 import TaskDataService from "@/services/TaskDataService";
 
-const TaskAdd = ({ projectId }) => {
+const TaskAdd = ({ projectId, watch }) => {
     const [minDate, setMinDate] = useState(null)
 
     useEffect(() => {
@@ -23,6 +23,10 @@ const TaskAdd = ({ projectId }) => {
             alert("Theres no description of this task, please create one")
         }
 
+        if (!finish_at) {
+            alert("Select when finish this todo")
+        }
+
         const response = await TaskDataService.create({
             description,
             finish_at,
@@ -30,12 +34,13 @@ const TaskAdd = ({ projectId }) => {
             project_id: projectId,
             "status": false,
         })
-        console.log(response.data)
+        e.target.reset();
 
-        // You can await here
-        // const response = await TaskDataService.create()
-        // setProject(response.data)
+
+        watch(response.data)
+
     }
+
     return (
         <Form onSubmit={create}>
             <div className="d-flex">

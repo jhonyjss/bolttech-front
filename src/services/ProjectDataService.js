@@ -7,5 +7,13 @@ class ProjectDataService {
       console.error("all", error);
     }
   }
+
+  async create(_data) {
+    try {
+      return await http.post(`/project`, _data);
+    } catch (error) {
+      console.error("create", error);
+    }
+  }
 }
 export default new ProjectDataService();

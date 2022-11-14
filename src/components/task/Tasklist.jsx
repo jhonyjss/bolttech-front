@@ -3,8 +3,15 @@ import PropTypes from 'prop-types';
 import { Form, Button } from "react-bootstrap";
 import TaskAdd from "./TaskAdd";
 import './style.scss'
+import TaskDataService from "@/services/TaskDataService";
 
-const Tasklist = ({ tasks, projectId }) => {
+const Tasklist = ({ tasks, projectId, watch }) => {
+
+  const removeTask = async (_id) => {
+    TaskDataService.delete(_id)
+    watch(_id)
+  }
+
   return (
     <>
       {tasks.map((task) => (
@@ -15,7 +22,7 @@ const Tasklist = ({ tasks, projectId }) => {
             <Button className="mx-1" variant="outline-primary" size="sm">
               <i className="fa fa-edit"></i>
             </Button>
-            <Button className="mx-1" variant="outline-danger" size="sm">
+            <Button onClick={() => removeTask(task.id)} className="mx-1" variant="outline-danger" size="sm">
               <i className="fa fa-trash"></i>
             </Button>
           </Form.Check>
@@ -23,7 +30,7 @@ const Tasklist = ({ tasks, projectId }) => {
         </div>
       ))}
       <hr />
-      <TaskAdd projectId={projectId} />
+      <TaskAdd watch={(e) => watch(e)} projectId={projectId} />
     </>
   )
 };

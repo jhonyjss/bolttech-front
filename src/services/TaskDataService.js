@@ -4,7 +4,15 @@ class TaskDataservice {
     try {
       return await http.post(`/task`, _data);
     } catch (error) {
-      console.error("all", error);
+      console.error("create", error);
+    }
+  }
+
+  async delete(id) {
+    try {
+      return await http.delete(`/task/${id}`);
+    } catch (error) {
+      console.error("create", error);
     }
   }
 }

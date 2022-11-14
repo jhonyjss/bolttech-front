@@ -1,7 +1,7 @@
 import React from "react";
 import BTFormRegister from "../components/auth/BTFormRegister";
-const Login = () => {
+const Register = () => {
     return <BTFormRegister />;
 };
 
-export default Login;
+export default Register;
