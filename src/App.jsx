@@ -9,15 +9,15 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/projects" element={<Project />} />
+
+      <Route path="/projects" element={<ProtectedRoute>
+        <Project />
+      </ProtectedRoute>} />
       <Route
         path="/register"
-        element={
-          <ProtectedRoute>
-            <Register />
-          </ProtectedRoute>
-        }
+        element={<Register />}
       />
+
     </Routes>
   );
 }

@@ -10,7 +10,11 @@ export const AuthProvider = ({ children }) => {
   // call this function when you want to authenticate the user
   const login = async (data) => {
     setUser(data);
-    navigate("/project");
+    navigate("/projects");
+  };
+
+  const getUser = async () => {
+    return await user
   };
 
   // call this function to sign out logged in user
@@ -24,12 +28,13 @@ export const AuthProvider = ({ children }) => {
       user,
       login,
       logout,
+      getUser
     }),
     [user]
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-export const useAuth = () => {
+export default function useAuth() {
   return useContext(AuthContext);
 };
