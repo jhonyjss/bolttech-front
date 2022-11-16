@@ -1,9 +1,11 @@
+import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./style.scss";
 
-type Props = {};
-export default function BTFormLogin({}: Props) {
+const BTFormLogin: React.FC = () => {
+  function handleLogin() {}
+
   return (
     <section id="btlogin" className="flex-center-items h-screen">
       <Form>
@@ -18,7 +20,7 @@ export default function BTFormLogin({}: Props) {
         </Form.Group>
 
         <div className="d-grid gap-2">
-          <Button variant="primary" type="submit" size="lg">
+          <Button onClick={handleLogin} variant="primary" type="submit" size="lg">
             Login
           </Button>
           <Button variant="info" size="lg">
@@ -28,4 +30,6 @@ export default function BTFormLogin({}: Props) {
       </Form>
     </section>
   );
-}
+};
+
+export default BTFormLogin;

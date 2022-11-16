@@ -1,20 +1,12 @@
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import BTFormLogin from "./components/auth/BTFormLogin";
 import BTNavbar from "./components/Navbar";
-function App() {
-  const [count, setCount] = useState(0);
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
 
+function App() {
   return (
-    <>
-      <BTNavbar />
-      <BTFormLogin />
-    </>
+    <Routes>
+      <Route path="/" element={<Login />} />
+    </Routes>
   );
 }
 
